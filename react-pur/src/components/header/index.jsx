@@ -6,37 +6,41 @@ class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            flag: 0,
-        }
-    }
-    Inp = (e) => {
-        this.setState({ num: e.target.value })
-    }
+            userInput: "",
+            error1: "",
+            error2: "",
+            error3: "",
+            error4: ""
 
-    Plus = () => {
-        this.setState({ flag: +this.state.num + this.state.flag })
-    }
-    Minus = () => {
-        if (this.state.flag > 0) {
-            this.setState({
-                flag: this.state.flag - +this.state.num
-            })
-        }
-        if (+this.state.num > this.state.flag) {
-            this.setState({
-                flag: this.state.flag - this.state.flag
-            })
 
         }
     }
+
+
+    onChange = (e) => {
+
+        this.setState({ userInput: e.target.value })
+
+        if (e.target.value.length === 0) {
+            this.state.error1 = "vay"
+
+        } else { this.state.error1 = "" }
+    }
+
     render() {
 
-        return <>
-            <p>{this.state.flag}</p>
-            <button onClick={this.Plus}>+</button>
-            <button onClick={this.Minus}>-</button>
-            <input type="number" onChange={this.Inp} className="red" />
-        </>
+        return <div className="center">
+
+            <input type="text" placeholder="name" onChange={this.onChange} />
+            <p>{this.state.error1}</p>
+            <input type="text" placeholder="Surname" onChange={this.onChange} />
+            <p>{this.state.error2}</p>
+            <input type="text" placeholder="login" onChange={this.onChange} />
+            <p>{this.state.error3}</p>
+            <input type="text" placeholder="password" onChange={this.onChange} />
+            <p>{this.state.error4}</p>
+            <button className="btn" >Registration</button>
+        </div>
     }
 }
 
