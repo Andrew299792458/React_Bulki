@@ -1,5 +1,5 @@
 input{
-    width: 300px;
+    width: 200px;
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -10,17 +10,24 @@ input{
     flex-direction: column;
     height: 500px;
     width: 500px;
-    gap: 10px;
     margin: 0 auto;
+    gap: 20px;
 
 }
 .btn {
     height: 20px;
-    width: 200px;
+    width: 100px;
     display: flex;
     justify-content: center;
     margin: 0 auto;
 }
 .red{
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+.showError{
     border-color: red;
 }

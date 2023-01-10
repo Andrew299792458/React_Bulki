@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "./components/header"
+import ValidateForm from "./components/ValidateForm"
 
 
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <ValidateForm />
     </div>
   );
 }
